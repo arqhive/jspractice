@@ -12,11 +12,61 @@
 
     <script>
       function toCelsius(fahrenheit) {
+        // 받은 인자의 개수
+        console.log(arguments.length);
         return (5 / 9) * (fahrenheit - 32);
       }
 
       // ()없이 함수에 접근하면 결과 대신 정의가 반환된다.
-      document.getElementById('demo').innerHTML = toCelsius;
+      document.getElementById('demo').innerHTML = toCelsius(13);
+
+      // 이 함수는 호출되지 않아도 자동으로 시작된다.
+      (function() {
+        alert('Hi!');
+      })();
+
+      // Arrow function
+      // 화살표 함수는 this를 가지지 않는다.
+      // 객체 메소드를 정의하는데 적합하지 않다.
+      // 호이스팅 되지 않는다. (선언을 못하니까)
+      // 그러니까 항상 사용하기전에 표현식을 작성한다.
+      // const 키워드를 사용하는 것이 좋다.
+      // 단일 명령문일 경우 return 키워드와 중괄호를 생략할 수 있다.
+      // IE 11 이전 지원 안함
+
+
+      // 자바스크립트는 매개 변수에 대한 데이터 유형을 지정하지 않는다.
+      // 검사도 안한다.
+      // 인수 개수도 확인 안한다. (누락된 값은 undefined)
+
+      // 인수는 값으로 전달된다.
+      // 객체는 참조로 전달된다. 함수에서 객체 값을 변경하면 원 객체 값도 변경된다.
+
+      // 선언된 함수는 전역객체에 속한다. (전역객체로 호출하는건 삼가한다.)
+      // toCelsius(5); === window.toCelsius(5);
+
+
+      // 카운터 딜레마
+      var counter = 0;
+
+      function add() {
+        counter += 1;
+      }
+
+      add();
+      add();
+      add();
+      console.log(counter);
+      // 하지만 add()를 호출하지 않아도 counter를 변경 할 수 있다.
+      // 클로저를 사용하여 값을 캡슐화 한다.
+      // 함수가 private 변수를 갖게 한다.
+      var add = (function() {
+        var counter = 0;
+        return function() {
+          counter += 1;
+          return counter
+        }
+      })();
 
     </script>
   </body>

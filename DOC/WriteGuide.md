@@ -74,3 +74,18 @@ throw; 임의적으로 예외를 발생시킨다.
 지속적으로 저장할 필요가 없는 값은 변수를 따로 만들지 않는다.
 
 스크립트 코드를 HTML 아래에 두면 페이지가 먼저 로드 된 뒤 스크립트가 로드 된다.
+
+## 객체
+자바스크립트에서는 거의 모든것이 객체이다.
+
+new 로 정의된 bool, number, string
+Date, Math, Reg, Array, Function, Object
+
+## Primitive type
+1. string
+2. number
+3. boolean
+4. null
+5. undefined
+
+어떤 값을 생성할때에는 리터럴 형식으로 작성하는게 성능에 좋다. (new 키워드를 피함)

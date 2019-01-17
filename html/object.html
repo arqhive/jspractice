@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+
+  </head>
+
+  <body>
+    <p id="demo"></p>
+    <script>
+      /**
+       * Getter, Setter를 사용하는 이유
+       * 구문이 단순함
+       * 속성과 메서드에 대해 동일한 구문을 사용할 수 있음
+       * 더 나은 데이터 품질 확보
+       */
+
+      var person = {
+        firstName: "John",
+        lastName: "Doe",
+        language: "en",
+        get lang() {
+          return this.language;
+        }
+
+        set lang(lang) {
+          return this.language = lang;
+        }
+      };
+
+      document.getElementById("demo").innerHTML = person.lang;
+
+    </script>
+  </body>
+
+</html>
