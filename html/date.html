@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+
+  </head>
+
+  <body>
+    <p id="demo">
+
+    </p>
+    <p id="demo2">
+
+    </p>
+    <script>
+      // 기본적으로 자바스크립트는 브라우저의 시간대를 사용하고 날짜를 전체 텍스트 문자열로 표시한다.
+
+      // Date 객체는 정적이다.
+      // 현재 날짜와 시간으로 새 날짜 객체를 만듬
+      console.log(new Date());
+
+      // 년, 월, 일, 시간, 분, 초, 밀리초
+      // 0~11 까지 월을 계산한다.
+      console.log(new Date(2018, 11, 24, 10, 33, 30, 0));
+
+      // 타임스탬프
+      console.log(new Date(1453))
+
+      // dateString
+      console.log(new Date('October 13, 2014 11:13:00'));
+
+      // 날짜를 UTC형식으로 보여준다.
+      var d = new Date();
+      document.getElementById("demo").innerHTML = d.toUTCString();
+
+      // 일릭 쉬운 형식으로 변환한다.
+      document.getElementById("demo2").innerHTML = d.toDateString();
+
+      // timestamp로 변경하기
+      var msec = Date.parse("March 21, 2012");
+      console.log(msec);
+
+    </script>
+  </body>
+
+</html>
