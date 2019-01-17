@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+
+  </head>
+
+  <body>
+    <p id="demo">
+
+    </p>
+
+    <script>
+      function toCelsius(fahrenheit) {
+        return (5 / 9) * (fahrenheit - 32);
+      }
+
+      // ()없이 함수에 접근하면 결과 대신 정의가 반환된다.
+      document.getElementById('demo').innerHTML = toCelsius;
+
+    </script>
+  </body>
+
+</html>

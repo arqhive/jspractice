@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+
+  </head>
+
+  <body>
+    <p id="demo">
+
+    </p>
+    <p id="demo2">
+
+    </p>
+    <p id="demo3">
+
+    </p>
+
+    <script>
+      // 마지막 요소 뒤에 쉼표는 IE8 및 이전 버전에서 실패함
+      var cars = ['Volvo', 'Saab', 'BMW', ];
+      cars[0] = 'renault'
+      document.getElementById('demo').innerHTML = cars[0];
+
+      // 배열의 모든 요소가 문자열 처럼 나온다.
+      document.getElementById('demo2').innerHTML = cars;
+
+      // 배열의 길이 반환
+      console.log(cars.length);
+
+      // Loop
+      var fruits, text, fLen, i;
+      fruits = ['Banana', 'Orange', 'Apple', 'Mango'];
+      fLen = fruits.length;
+
+      text = '<ul>';
+      for (i = 0; i < fLen; i++) {
+        text += '<li>' + fruits[i] + '</li>';
+      }
+      text += '</ul>';
+
+      document.getElementById('demo3').innerHTML = text;
+
+      // Array.forEach()
+      var fruits, text, fLen, i;
+      fruits = ['Banana', 'Orange', 'Apple', 'Mango'];
+      fLen = fruits.length;
+
+      text = '<ul>';
+      fruits.forEach(myFunction);
+      text += '</ul>';
+
+      function myFunction(value) {
+        text += "<li>" + value + "</li>";
+      }
+
+      document.getElementById('demo3').innerHTML = text;
+
+      // 배열에 요소 추가하기
+      var country = ['Korea', 'Japan', 'China'];
+      country.push('USA');
+      console.log(country);
+      country[country.length] = 'UK';
+      console.log(country);
+
+      // 변수가 배열인지 확인하는 법
+      // 기본적으로 typeof는 object가 반환된다.
+
+      // 1. Array.isArray() (구 브라우저에서 지원 안됨)
+      // 2. isArray 직접 구현
+      function isArray(x) {
+        return x.constructor.toString().indexOf('Array') > -1;
+      }
+      // 3. instanceof
+      console.log(country instanceof Array);
+
+    </script>
+  </body>
+
+</html>

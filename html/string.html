@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+
+  </head>
+
+  <body>
+    <script>
+      // 문자열이 길이 확인하기
+      var txt = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+      console.log(txt.length);
+
+      // 지정된 값의 인덱스 반환
+      console.log(txt.indexOf('B'));
+
+      // 지정된 값의 마지막으로 나타나는 인덱스
+      console.log(txt.lastIndexOf('C'));
+
+      // 발견되지 않는 경우 -1이 반환된다.
+      console.log(txt.indexOf('iuq'));
+
+      // 시작 인덱스 지정 가능
+      console.log(txt.indexOf('B', 15));
+
+      // 문자열 검색
+      console.log(txt.search('ABC'));
+
+      // indexOf() 는 시작 위치를 지정 할 수 있다.
+      // search 는 정규표현식 사용이 가능하다.
+
+
+      // 모든 문자열 메소드는 새 문자열을 반환한다.
+      // 원래 문자열을 수정하지 않는다.
+      // 공식적으로 문자열은 변경할 수 없고 대체된다.
+      // 문자열 추출(자르기)
+      var str = 'Apple, Banana, Kiwi';
+
+      // slice() 는 문자열의 일부룰 잘라 새 문자열로 반환한다.
+      // 시작과 끝 인덱스 지정 (끝 인덱스 지정 안할 시 끝까지)
+      var res = str.slice(7, 13);
+      console.log(res);
+
+      // 음수 인덱스도 가능
+      console.log(str.slice(-12, -6));
+
+      // substr() slice와 비슷한데 두번째 인자는 잘라내는 부분의 길이를 지정한다
+      console.log(str.substr(7, 6));
+
+      // 생략하면 뒷부분 전부
+      console.log(str.substr(7));
+
+      // 첫 번째 매개변수가 음수이면 위치는 문자열 끝에서 부터 계산
+      console.log(str.substr(-4));
+
+      // 지정된 값을 문자열의 다른 값으로 바꾼다.
+      // 문자열을 변경하는것이 아니라 변경된 값을 반환한다.
+      var str2 = 'Please Visit Microsoft';
+      var n = str2.replace('Microsoft', 'Apis');
+      console.log(n);
+
+      // 대문자와 소문자를 구분하지 않음
+      var n2 = str2.replace(/MICROSOFT/i, 'APIS');
+      console.log(n2);
+
+      // 대문자로 변경
+      var text1 = 'Hello World!';
+      console.log(text1.toUpperCase());
+
+      // 소문자로 변경
+      console.log(text1.toLowerCase());
+
+      // 두 개 이상의 문자열을 합친다.
+      // 아래 두줄은 같다.
+      // var text = "Hello" + "" + "World!";
+      var text = "Hello".concat(" ", "World!");
+      console.log(text);
+
+      // 문자열 양 옆 여백 제거
+      var trimStr = '                Hello World!            ';
+      console.log(trimStr.trim());
+
+      // 지정한 인덱스에 있는 문자 가져오기
+      var char = "HELLO WORLD";
+      console.log(char.charAt(0));
+
+      // 지정한 인덱스에 유니코드 가져오기
+      console.log(char.charCodeAt(0));
+
+      // Property Access
+      // 배열 처럼 보이지만 실제로 그렇지는 않다.
+      // []에 문자가 없으면 undefined를 반환
+      // 읽기 전용이다. str[0] = 'A'는 오류는 없지만 동작하지 않음
+      console.log(char[0]);
+
+      // 문자열을 배열로 전환
+      var txt = 'a, b, c, d, e';
+      console.log(txt.split());
+      console.log(txt.split(','));
+
+    </script>
+  </body>
+
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+
+  </head>
+
+  <body>
+    <script>
+      // 숫자 인지 아닌지 확인하는 방법
+      var x = 100 / "Apple";
+      console.log(isNaN(x)); // true
+
+      // NaN으로 연산도 가능
+      console.log(NaN + 5); // NaN
+
+      // 문자열 연결도 된다
+      console.log(NaN + "5");
+
+      console.log(typeof NaN); // Number
+
+      // 자바사크립트가 지원하는 가장 큰 숫자를 벗어나면
+      console.log(2 / 0); // Infinity
+      console.log(-2 / 0) // -Infinity
+
+      console.log(typeof Infinity); // Number
+
+      // '0x'를 붙이면 16진수로 해석됨
+      console.log(0xFF); // 255
+
+      // '0'을 붙이면 8진수로 해석됨
+      console.log(010);
+
+      // 인자에 진수값을 넣어 변환 가능 (문자열로 변환)
+      var myNumber = 32;
+      myNumber.toString(10);
+      myNumber.toString(32);
+      myNumber.toString(16);
+      myNumber.toString(8);
+      myNumber.toString(2);
+
+      // 지수 표기법을 사용하여 숫자를 반올림하여 쓰는 문자열 반환
+      var y = 9.656;
+      console.log(y.toExponential(2));
+
+      // 지정된 소수 자릿수로 반올림하여 문자열로 반환
+      console.log(y.toFixed(2)); // 9.66
+
+      // 지정된 길이로 쓰여진 문자열 반환
+      console.log(y.toPrecision(2)); // 9.7
+
+      // 숫자를 숫자로 반환 (객체를 원시값으로 변환)
+      console.log(y.valueOf());
+
+      // 값을 숫자로 변환 (Number 메소드가 아니라 전역 메소드임)
+      console.log(Number("10"));
+      console.log("John"); // NaN
+
+      // 타임스탬프로 변경
+      console.log(Number(new Date()));
+
+      // 문자열을 파싱하고 정수를 반환
+      console.log(parseInt('10.33'));
+      console.log(parseInt('10 20 30')); // 첫 번째 숫자 반환
+      console.log(parseInt('10 years')); // 첫 번째 숫자 반환
+
+      // 문자열 파싱하고 숫자를 반환
+      console.log(parseFloat('10.33')) // 10.33
+      console.log(parseFloat('10 20 30')); // 첫 번째 숫자 반환
+      console.log(parseFloat('10 years')); // 첫 번째 숫자 반환
+
+      // Number Property
+      console.log(Number.MAX_VALUE);
+      console.log(Number.MIN_VALUE);
+      console.log(Number.POSITIVE_INFINITY);
+      console.log(Number.NEGATIVE_INFINITY);
+
+      console.log(y.MAX_VALUE); // undefined
+
+    </script>
+  </body>
+
+</html>
