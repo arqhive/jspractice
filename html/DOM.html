@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <style>
+      #container {
+        width: 400px;
+        height: 400px;
+        /* relative 여야함 */
+        position: relative;
+        background: yellow;
+      }
+
+      #animation {
+        width: 50px;
+        height: 50px;
+        /* absolute 여야함 */
+        position: absolute;
+        background: red;
+      }
+    </style>
+  </head>
+
+  <body>
+    <p id="demo">
+
+    </p>
+    <p class="intro">
+
+    </p>
+
+    <a href="https://google.com" target="_blank">Go to Google</a>
+
+    <!-- 모든 애니메이션 요소는 컨테이너에 상대적이야 한다. -->
+    <div id="container">
+      <div id="animation">
+        애니메이션
+      </div>
+    </div>
+
+    <script>
+      // ID로 Element 찾기
+      var myElement = document.getElementById('demo');
+
+      // Tag명으로 찾기 (Elements 주의)
+      var x = document.getElementsByTagName('p');
+
+      // Class명으로 찾기 (Elements 주의)
+      var y = document.getElementsByClassName('intro');
+
+      // CSS Selector로 찾기
+      var z = document.querySelectorAll('p.intro');
+
+      // 내용 변경하기
+      document.getElementById('demo').innerHTML = 'Hello';
+
+      // attribute 변경
+      document.getElementsByTagName('a').href = "https://www.naver.com";
+
+      // style 변경
+      document.getElementById('demo').style.color = "blue";
+
+      // 애니메이션 코드
+      function myMove() {
+        var elem = document.getElementById('animation');
+        var pos = 0;
+        var id = setInterval(frame, 5);
+        function frame() {
+          if (pos == 350) {
+            clearInterval(id);
+          } else {
+            pos++;
+            elem.style.top = pos + 'px';
+            elem.style.left = pos + 'px';
+          }
+        }
+      }
+    </script>
+  </body>
+
+</html>
